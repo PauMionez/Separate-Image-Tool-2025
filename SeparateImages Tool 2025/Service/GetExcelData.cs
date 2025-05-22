@@ -12,11 +12,9 @@ namespace SeparateImages_Tool_2025.Service
     {
         public List<ImageListModel> ExtractImageNames(string excelFilePath, string imageNameColumn = "ImageName")
         {
-                List<ImageListModel> imageNames = new List<ImageListModel>();
+            List<ImageListModel> imageNames = new List<ImageListModel>();
             try
             {
-
-
                 using (ExcelEngine excelEngine = new ExcelEngine())
                 {
                     IApplication application = excelEngine.Excel;
@@ -42,7 +40,9 @@ namespace SeparateImages_Tool_2025.Service
                     }
 
                     if (imageNameColumnIndex == -1)
-                        throw new Exception($"Column '{imageNameColumn}' not found in Excel file.");
+                    { 
+                        WarningMessage($"Column '{imageNameColumn}' not found in Excel file."); 
+                    }
 
                     // Read the values under the image name column
                     for (int row = 2; row <= lastRow; row++)
@@ -64,7 +64,7 @@ namespace SeparateImages_Tool_2025.Service
             {
                 ErrorMessage(ex);
             }
-                return imageNames;
+            return imageNames;
         }
     }
 }

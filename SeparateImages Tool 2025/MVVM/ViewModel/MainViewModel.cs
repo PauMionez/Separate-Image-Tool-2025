@@ -112,9 +112,6 @@ namespace SeparateImages_Tool_2025.MVVM.ViewModel
 
                 ImageListFolderPath = selectedImageFolder;
                 ImageOutputFolder = Path.Combine(selectedImageFolder, $"{Path.GetFileName(selectedImageFolder)}_Output");
-
-
-
             }
             catch (Exception ex)
             {
@@ -166,6 +163,9 @@ namespace SeparateImages_Tool_2025.MVVM.ViewModel
                 CurrentFileName = string.Empty;
             }
         }
+
+
+
 
 
     }

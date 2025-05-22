@@ -15,7 +15,7 @@ namespace SeparateImages_Tool_2025.Abstract
     abstract class ViewBaseModel: BindableBase
     {
         private string ApplicationName => "Separate Images Tool 2025";
-        private Version Version => new Version(1, 0, 0, 1);
+        private Version Version => new Version(1, 0, 0, 2);
         public string Title => $"{ApplicationName} v{Version}";
 
 
