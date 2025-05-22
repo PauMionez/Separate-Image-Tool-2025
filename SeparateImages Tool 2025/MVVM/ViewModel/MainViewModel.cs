@@ -71,12 +71,12 @@ namespace SeparateImages_Tool_2025.MVVM.ViewModel
 
         #endregion
 
-
         #region fields
         private static readonly string[] EXCEL_EXTENSION = { "*.xlsx", "*.xls", "*.xlsm", "*.xltx", "*.xltm", "*.xlsb" };
         private List<ImageListModel> imageNameList;
         private readonly GetExcelData ExcelHelper;
         #endregion
+
         public MainViewModel()
         {
             SelectImageFileCommand = new DelegateCommand(OnSelectImageFile);
