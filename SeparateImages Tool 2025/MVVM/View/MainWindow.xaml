@@ -7,8 +7,8 @@
                   xmlns:vm="clr-namespace:SeparateImages_Tool_2025.MVVM.ViewModel"
                   xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
                   xmlns:sync="http://schemas.syncfusion.com/wpf"
-        xmlns:local="clr-namespace:SeparateImages_Tool_2025"
-    
+                  xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:SeparateImages_Tool_2025" 
         Width="400"
         Height="350"
         Background="{ui:ThemeResource}"
@@ -18,6 +18,8 @@
         WindowStyle="None"
         mc:Ignorable="d">
 
+    
+    
     <ui:FluentWindow.DataContext>
         <vm:MainViewModel />
     </ui:FluentWindow.DataContext>
@@ -27,8 +29,18 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <ui:TitleBar Title="{Binding Path=Title}" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <hc:AnimationPath Data="{DynamicResource MyTRBGeometry}" 
+                          Duration="00:00:05" 
+                          StrokeThickness="1" Margin="5 0 350 0 "
+                          Stroke="White"></hc:AnimationPath>
+            <StackPanel Orientation="Horizontal">
+                <ui:TitleBar Title="{Binding Path=Title}" Margin="25 0 0 0" Width="375" />
+            </StackPanel>
+        </Grid>
 
+        
+        
 
         <StackPanel Grid.Row="1" Orientation="Vertical">
             
